@@ -9,11 +9,11 @@ import StaticLogger
 
 @StaticLogger
 struct MyStruct {
-  let x: Int
+    let x: Int
 
-  func test() {
-    Self.logger.debug("X is \(x)")
-  }
+    func test() {
+        Self.logger.debug("X is \(x)")
+    }
 }
 ```
 
@@ -21,13 +21,13 @@ Expands to:
 
 ```swift
 struct MyStruct {
-  let x: Int
+    let x: Int
 
-  func test() {
-    Self.logger.debug("X is \(x)")
-  }
+    func test() {
+        Self.logger.debug("X is \(x)")
+    }
 
-  static let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "", category: "MyStruct")
+    static let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "", category: "MyStruct")
 }
 ```
 
