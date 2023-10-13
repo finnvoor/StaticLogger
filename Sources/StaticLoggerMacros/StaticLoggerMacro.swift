@@ -53,7 +53,7 @@ extension StaticLogger {
         var description: String {
             switch self {
             case .unknownDeclaration:
-                "Unknown declaration"
+                "Unknown declaration — StaticLogger must be used on a class, struct, or enum"
             }
         }
     }
