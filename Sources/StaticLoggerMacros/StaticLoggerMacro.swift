@@ -12,7 +12,7 @@ public struct StaticLogger: MemberMacro {
         providingMembersOf declaration: some SwiftSyntax.DeclGroupSyntax,
         in _: some SwiftSyntaxMacros.MacroExpansionContext
     ) throws -> [SwiftSyntax.DeclSyntax] {
-        guard let declarationName = declaration.as(ClassDeclSyntax.self)?.name.text ?? declaration.as(StructDeclSyntax.self)?.name.text ?? declaration.as(EnumDeclSyntax.self)?.name.text else {
+        guard let declarationName = declaration.as(ClassDeclSyntax.self)?.name.text ?? declaration.as(StructDeclSyntax.self)?.name.text ?? declaration.as(ActorDeclSyntax.self)?.name.text ?? declaration.as(EnumDeclSyntax.self)?.name.text else {
             throw Error.unknownDeclaration
         }
 
@@ -53,7 +53,7 @@ extension StaticLogger {
         var description: String {
             switch self {
             case .unknownDeclaration:
-                "Unknown declaration — StaticLogger must be used on a class, struct, or enum"
+                "Unknown declaration — StaticLogger must be used on a class, struct, actor, or enum"
             }
         }
     }
