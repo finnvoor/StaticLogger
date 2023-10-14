@@ -1,5 +1,5 @@
 # StaticLogger
-A simple Swift macro that adds a static `logger` method to a class, struct, or enum, with a default subsystem and category based on the bundle identifier and type name.
+A simple Swift macro that adds a static `logger` method to a class, struct, actor, or enum, with a default subsystem and category based on the bundle identifier and type name.
 
 ## Usage
 
